@@ -56,7 +56,7 @@ function getPreparedGoods(
 
 export const App: React.FC = () => {
   const [reverse, setReversed] = useState(false);
-  const [sortField, setSortField] = useState('');
+  const [sortField, setSortField] = useState(SortType.SORT_FIELD_ALPHABET);
   const visibleGoods = getPreparedGoods(goodsFromServer, {
     sortField,
     reverse,
@@ -96,7 +96,7 @@ export const App: React.FC = () => {
         {(sortField || reverse) && (
           <button
             onClick={() => {
-              setSortField('');
+              setSortField(SortType.SORT_FIELD_ALPHABET);
               setReversed(false);
             }}
             type="button"
